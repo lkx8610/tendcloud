@@ -28,7 +28,7 @@ public class TestCounting {
 		Assert.assertEquals("40", "40");
 		// Assert.assertEquals("40", "040");
 		new SoftAssert().assertEquals("33", "rr");
-		;
+		
 		System.out.println("hello ok!!!");
 	}
  
