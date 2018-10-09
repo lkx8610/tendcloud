@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="methods" thread-count="1" >
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+ Test
+  <test name="Test">
+    <classes>
+      <class name="testcases.GameAnalytics"/>
+    </classes>
+  </test>  
+  <test name="Test1">
+    <classes>
+      <class name="testcases.CountingTest"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->
