@@ -31,7 +31,8 @@ public class TestCounting {
 		;
 		System.out.println("hello ok!!!");
 	}
-
+ 
+	
 	public long getCount() {
 		return count;
 	}
