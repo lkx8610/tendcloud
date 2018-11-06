@@ -110,7 +110,9 @@ public class GameAnalytics {
 //		profile.setPreference("dom.ipc.plugins.enabled", false);
 //		driver = new FirefoxDriver(profile);
 		// System.setProperty("webdriver.firefox.bin","d:\\work\\firefox.exe");
-		 System.setProperty("webdriver.chrome.driver","d:\\work\\chromedriver.exe");
+		String file = this.getClass().getClassLoader().getResource("testdata/chromedriver.exe").getPath();
+		
+		 System.setProperty("webdriver.chrome.driver",file);
 		 driver=new ChromeDriver();
 		driver.manage().window().maximize();
 
