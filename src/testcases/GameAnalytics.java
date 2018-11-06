@@ -121,7 +121,7 @@ public class GameAnalytics {
 		
 		 System.setProperty("webdriver.chrome.driver",file);
 		 ChromeOptions options = new ChromeOptions();
-		 DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+		 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		 LoggingPreferences log_prefs = new LoggingPreferences();
 		 log_prefs.enable(LogType.BROWSER, Level.SEVERE);
 		 capabilities.setCapability(CapabilityType.LOGGING_PREFS, log_prefs);
