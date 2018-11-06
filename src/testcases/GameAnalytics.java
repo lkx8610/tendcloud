@@ -1,14 +1,21 @@
 package testcases;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -113,7 +120,13 @@ public class GameAnalytics {
 		String file = this.getClass().getClassLoader().getResource("testdata/chromedriver.exe").getPath();
 		
 		 System.setProperty("webdriver.chrome.driver",file);
-		 driver=new ChromeDriver();
+		 ChromeOptions options = new ChromeOptions();
+		 DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+		 LoggingPreferences log_prefs = new LoggingPreferences();
+		 log_prefs.enable(LogType.BROWSER, Level.SEVERE);
+		 capabilities.setCapability(CapabilityType.LOGGING_PREFS, log_prefs);
+		 driver=new ChromeDriver(capabilities);
+		 
 		driver.manage().window().maximize();
 
 		// System.setProperty("webdriver.chrome.driver","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
